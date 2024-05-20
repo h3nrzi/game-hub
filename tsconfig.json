@@ -23,12 +23,6 @@
     "noUnusedLocals": true,
     "declaration": false, // Don't generate declaration files (for dev)
     "sourceMap": true, // Enable source maps for debugging,
-    "baseUrl": ".", // Base directory for resolving modules (optional)
-    "paths": { // Define custom module paths (optional)
-      "@/*": [
-        "src/*"
-      ]
-    }
   },
   "include": [ // Include source files for compilation
     "src"
