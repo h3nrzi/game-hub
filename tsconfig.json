@@ -1,26 +1,36 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
+    "target": "ESNext", // Adjust based on browser support needs (e.g. "es2015")
+    "useDefineForClassFields": true, // Include necessary libraries
     "lib": [
       "DOM",
       "DOM.Iterable",
       "ESNext"
     ],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "allowJs": true, // Allow mixing TypeScript and JavaScript files
+    "skipLibCheck": true, // Skip type checking for external libraries (if applicable)
+    "esModuleInterop": true, // Enable for modern module resolution
+    "allowSyntheticDefaultImports": true, // Allow default imports for named exports
+    "strict": true, // Enable strict type checking
+    "noImplicitAny": true, // Disallow implicit use of `any` type
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Node", // Module resolution strategy (adjust if needed)
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": true, // Treat each file as a separate module
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx", // Set JSX mode to React
+    "noUnusedLocals": true,
+    "declaration": false, // Don't generate declaration files (for dev)
+    "sourceMap": true, // Enable source maps for debugging,
+    "baseUrl": ".", // Base directory for resolving modules (optional)
+    "paths": { // Define custom module paths (optional)
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
-  "include": [
+  "include": [ // Include source files for compilation
     "src"
   ],
   "references": [
