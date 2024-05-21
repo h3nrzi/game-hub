@@ -6,7 +6,7 @@ const GameCardContainer = ({ children }: { children: ReactNode }) => {
 		<Box
 			borderRadius="10px"
 			overflow="hidden"
-			width="300px"
+			width="100%"
 		>
 			{children}
 		</Box>
