@@ -21,7 +21,10 @@ const GameCard = ({ game }: Props) => {
 	const bg = colorMode === "light" ? "gray.100" : "gray.700";
 
 	return (
-		<Card>
+		<Card
+			borderRadius="10px"
+			overflow="hidden"
+		>
 			<Image src={getCroppedImageUrl(game.background_image)} />
 			<CardBody backgroundColor={bg}>
 				<HStack
