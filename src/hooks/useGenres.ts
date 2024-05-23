@@ -10,12 +10,12 @@ export interface Genre {
 }
 
 const useGenres = () => {
-    return useQuery<FetchResponse<Genre>, Error>({
+    return useQuery({
         queryKey: ["genres"],
         staleTime: 24 * 60 * 60 * 1000, // 24h
         initialData: fetchResponseGenres,
         queryFn: async () => {
-            const res = await apiClient.get("/genres")
+            const res = await apiClient.get<FetchResponse<Genre>>("/genres")
             return res.data
         }
     })
