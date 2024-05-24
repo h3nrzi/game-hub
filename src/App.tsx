@@ -3,15 +3,13 @@ import Navbar from "./components/Navbar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import { useState } from "react";
-import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
-import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
-	genre: Genre | null;
-	platform: Platform | null;
+	genreId?: number;
+	platformId?: number;
 	sortOrder: string;
 	searchText: string;
 }
@@ -31,7 +29,14 @@ const App = () => {
 			}}
 		>
 			<GridItem area="nav">
-				<Navbar onSearch={(s) => setGameQuery({ ...gameQuery, searchText: s })} />
+				<Navbar
+					onSearch={(s) =>
+						setGameQuery({
+							...gameQuery,
+							searchText: s,
+						})
+					}
+				/>
 			</GridItem>
 			<Show above="lg">
 				<GridItem
@@ -39,8 +44,13 @@ const App = () => {
 					px="10px"
 				>
 					<GenreList
-						onSelectGenre={(g) => setGameQuery({ ...gameQuery, genre: g })}
-						selectedGenre={gameQuery.genre}
+						onSelectGenre={(genre) =>
+							setGameQuery({
+								...gameQuery,
+								genreId: genre.id,
+							})
+						}
+						selectedGenreId={gameQuery.genreId}
 					/>
 				</GridItem>
 			</Show>
@@ -54,11 +64,21 @@ const App = () => {
 					mb="20px"
 				>
 					<PlatformSelector
-						onSelectPlatform={(p) => setGameQuery({ ...gameQuery, platform: p })}
-						selectedPlatform={gameQuery.platform}
+						onSelectPlatform={(platform) =>
+							setGameQuery({
+								...gameQuery,
+								platformId: platform.id,
+							})
+						}
+						selectedPlatformId={gameQuery.platformId}
 					/>
 					<SortSelector
-						onSelectSortOrder={(s) => setGameQuery({ ...gameQuery, sortOrder: s })}
+						onSelectSortOrder={(s) =>
+							setGameQuery({
+								...gameQuery,
+								sortOrder: s,
+							})
+						}
 						sortOrder={gameQuery.sortOrder}
 					/>
 				</HStack>
