@@ -31,9 +31,7 @@ const App = () => {
 			}}
 		>
 			<GridItem area="nav">
-				<Navbar
-					onSearch={(s) => setGameQuery({ ...gameQuery, searchText: s })}
-				/>
+				<Navbar onSearch={(s) => setGameQuery({ ...gameQuery, searchText: s })} />
 			</GridItem>
 			<Show above="lg">
 				<GridItem
@@ -46,23 +44,21 @@ const App = () => {
 					/>
 				</GridItem>
 			</Show>
-			<GridItem area="main">
+			<GridItem
+				area="main"
+				px="15px"
+			>
 				<GameHeading gameQuery={gameQuery} />
 				<HStack
 					spacing="15px"
 					mb="20px"
-					pl="10px"
 				>
 					<PlatformSelector
-						onSelectPlatform={(p) =>
-							setGameQuery({ ...gameQuery, platform: p })
-						}
+						onSelectPlatform={(p) => setGameQuery({ ...gameQuery, platform: p })}
 						selectedPlatform={gameQuery.platform}
 					/>
 					<SortSelector
-						onSelectSortOrder={(s) =>
-							setGameQuery({ ...gameQuery, sortOrder: s })
-						}
+						onSelectSortOrder={(s) => setGameQuery({ ...gameQuery, sortOrder: s })}
 						sortOrder={gameQuery.sortOrder}
 					/>
 				</HStack>
