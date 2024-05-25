@@ -1,4 +1,4 @@
-import { Button, Heading, HStack, Image, List, ListItem, Spinner } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack, Image, List, ListItem, Spinner } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
 import useGameQueryStore from "../store";
 
@@ -11,7 +11,7 @@ const GenreList = () => {
 	if (isLoading) return <Spinner />;
 
 	return (
-		<>
+		<Box m="10px">
 			<Heading
 				as="h2"
 				fontSize="2xl"
@@ -46,7 +46,7 @@ const GenreList = () => {
 					</ListItem>
 				))}
 			</List>
-		</>
+		</Box>
 	);
 };
 

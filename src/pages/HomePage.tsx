@@ -12,20 +12,14 @@ const HomePage = () => {
 			templateColumns={{ base: "1fr", lg: "200px 1fr" }}
 		>
 			<Show above="lg">
-				<GridItem
-					area="aside"
-					px="10px"
-				>
+				<GridItem area="aside">
 					<GenreList />
 				</GridItem>
 			</Show>
-			<GridItem
-				area="main"
-				px="15px"
-			>
+			<GridItem area="main">
 				<GameHeading />
 				<HStack
-					spacing="15px"
+					spacing="20px"
 					mb="20px"
 				>
 					<PlatformSelector />
