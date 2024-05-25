@@ -24,17 +24,17 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
 	},
 	setGenreId(genreId) {
 		return set((store) => ({
-			gameQuery: { ...store, genreId: genreId },
+			gameQuery: { ...store.gameQuery, genreId: genreId },
 		}));
 	},
 	setPlatformId(platformId) {
 		return set((store) => ({
-			gameQuery: { ...store, platformId: platformId },
+			gameQuery: { ...store.gameQuery, platformId: platformId },
 		}));
 	},
 	setSortOrder(sortOrder) {
 		return set((store) => ({
-			gameQuery: { ...store, sortOrder: sortOrder },
+			gameQuery: { ...store.gameQuery, sortOrder: sortOrder },
 		}));
 	},
 }));
