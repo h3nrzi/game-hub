@@ -20,7 +20,7 @@ const HomePage = () => {
 				<GameHeading />
 				<HStack
 					spacing="20px"
-					mb="20px"
+					m="20px"
 				>
 					<PlatformSelector />
 					<SortSelector />
