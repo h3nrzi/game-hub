@@ -1,6 +1,6 @@
 import { Card, CardBody, Heading, HStack, Image, Link as ChakraLink, useColorMode } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
-import { Game } from "../entities/Game";
+import Game from "../entities/Game";
 import getCroppedImageUrl from "../services/image-url";
 import CriticScore from "./CriticScore";
 import Emoji from "./Emoji";
