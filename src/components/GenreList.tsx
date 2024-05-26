@@ -11,7 +11,7 @@ const GenreList = () => {
 	if (isLoading) return <Spinner />;
 
 	return (
-		<Box m="10px">
+		<Box>
 			<Heading
 				as="h2"
 				fontSize="2xl"
