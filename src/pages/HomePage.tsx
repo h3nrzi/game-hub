@@ -21,6 +21,7 @@ const HomePage = () => {
 				<HStack
 					spacing="20px"
 					my="20px"
+					m="10px"
 				>
 					<PlatformSelector />
 					<SortSelector />
